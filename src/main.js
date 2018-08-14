@@ -8,12 +8,15 @@ import httpUrl from './api/api.js'
 import axios from './Axios/axios.js'
 import util from '@/assets/js/util.js'
 import store from './store/store.js'
-// import { ToastPlugin, LoadingPlugin, ConfirmPlugin} from 'vux'
+import { ToastPlugin, LoadingPlugin, ConfirmPlugin} from 'vux'
+import { Datetime, Group } from 'vux'
+Vue.component(Datetime.name, Datetime);
+Vue.component(Group.name, Group)
 
 Vue.config.productionTip = false
-// Vue.use(ConfirmPlugin)
-// Vue.use(ToastPlugin)
-// Vue.use(LoadingPlugin)
+Vue.use(ConfirmPlugin)
+Vue.use(ToastPlugin)
+Vue.use(LoadingPlugin)
 
 Vue.prototype.util = util
 Vue.prototype.httpUrl = httpUrl

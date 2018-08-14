@@ -1,18 +1,18 @@
 <template>
   <div class="footer">
-    <router-link class="nav-li" :to="{ path: '/index' }">
+    <router-link class="nav-li" :to="{ name: 'index' }">
       <span class="iconfont icon-shouye"></span>
       <span class="nav-tt">首页</span>
     </router-link>
-    <router-link class="nav-li" :to="{ path: 'invest' }" >
+    <router-link class="nav-li" :to="{ name: 'company' }" >
       <span class="iconfont icon-touzi_"></span>
       <span class="nav-tt">投资</span>
     </router-link >
-        <router-link class="nav-li" :to="{ path: 'mail' }" >
+        <router-link class="nav-li" :to="{ name: 'mail' }" >
       <span class="iconfont icon-shangcheng"></span>
       <span class="nav-tt">商城</span>
     </router-link >    
-        <router-link class="nav-li" :to="{ path: 'user' }" >
+        <router-link class="nav-li" :to="{ name: 'user' }" >
       <span class="iconfont icon-wode"></span>
       <span class="nav-tt">我的</span>
     </router-link >
