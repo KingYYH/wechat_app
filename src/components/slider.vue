@@ -107,14 +107,14 @@
     }
     .slide-group{
         height: 370px;
-        background: red;
+        // background: red;
         .slider-item{
             width:100vw;
             height: 370px;
-            background: yellowgreen;
+            // background: yellowgreen;
             float: left;
             &:nth-type-of(1){
-                background: red;
+                // background: red;
             }
         }
     }
@@ -125,7 +125,7 @@
         bottom: 10px;
         text-align: center;
         .dot{
-            background: rgba(255,255,255,.5);
+            background: #D2D2D2;
             display: inline-block;
             margin: 0 4px;
             height: 14px;

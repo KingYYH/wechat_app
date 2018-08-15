@@ -10,6 +10,14 @@ import util from '@/assets/js/util.js'
 import store from './store/store.js'
 import { ToastPlugin, LoadingPlugin, ConfirmPlugin} from 'vux'
 import { Datetime, Group } from 'vux'
+//挂载swiper
+import VueAwesomeSwiper from 'vue-awesome-swiper';
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper);
+import echarts from 'echarts'
+ 
+Vue.prototype.$echarts = echarts 
+
 Vue.component(Datetime.name, Datetime);
 Vue.component(Group.name, Group)
 

@@ -16,7 +16,7 @@
 </span></p>
  <p>涉诉情况<span>经查询全国法院被执行人信息查询系统、全国法院失信被执行人名单信息公布与查询平台、全国企业信息公示系统，未发现融资企业和经营者重大涉诉信息。
 </span></p>
-        <x-button class="submit invest-btn">我要投资</x-button>
+        <x-button class="submit invest-btn" @click="invBtn()">我要投资</x-button>
     </div>
     
   </div>
@@ -26,6 +26,11 @@ import { XButton } from "vux";
 export default {
   data() {
     return {};
+  },
+  methods: {
+    invBtn() {
+      this.router.push('/invPro')
+    }
   },
   components: {
     XButton

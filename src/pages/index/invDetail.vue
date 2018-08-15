@@ -8,7 +8,7 @@
       <p><span>151****88</span><span> 44000.00元</span></p>
       <p><span>2018-08-06 11:09:56</span></p>
     </div>
-    <x-button class="submit invest-btn">已售罄</x-button>
+    <x-button class="submit invest-btn" @click="invBtn()">已售罄</x-button>
   </div>
 </template>
 <script>
@@ -16,6 +16,11 @@ import { XButton } from "vux";
 export default {
   data() {
     return {};
+  },
+  methods: {
+    invBtn() {
+      this.router.push('/invPro')
+    }
   },
   components: {
     XButton

@@ -14,10 +14,13 @@ import proDetails from '@/pages/index/proDetails' // 详情介绍
 import slider from '@/components/slider' // 滚动
 import comIntro from '@/pages/index/comIntro' // 详情介绍
 import legal from '@/pages/index/legal' // 法律条款
-import subjectDetail from '@/pages/index/subjectDetail' // 法律条款
-import riskDetail from '@/pages/index/riskDetail' // 法律条款
-import invDetail from '@/pages/index/invDetail' // 法律条款
-
+import subjectDetail from '@/pages/index/subjectDetail' // 项目详情
+import riskDetail from '@/pages/index/riskDetail' // 风控详情
+import invDetail from '@/pages/index/invDetail' // 风险评估
+import dynamicNews from '@/pages/index/dynamicNews' // 动态新闻
+import newPage from '@/pages/index/newPage' // 新闻详情
+import invPro from '@/pages/invest/invPro' //  投资
+import statistical from '@/pages/index/statistical' // 统计数据
 Vue.use(Router)
 
 export default new Router({
@@ -35,7 +38,7 @@ export default new Router({
       path: '/invest',
       name: 'invest',
       component: invest,
-      redirect: 'company',  
+      redirect: 'invest/company',  
       children: [
         {  
           path: '/invest/company',
@@ -113,6 +116,26 @@ export default new Router({
       path: '/legal',
       name: 'legal',
       component: legal
-     }
+     },
+     {
+       path: '/dynamicNews',
+       name: 'dynamicNews',
+      component: dynamicNews
+     },
+     {
+      path: '/newPage',
+      name: 'newPage',
+      component: newPage
+    },
+    {
+      path: '/invPro',
+      name: 'invPro',
+      component: invPro
+    },
+    {
+      path: '/statistical',
+      name: 'statistical',
+      component: statistical
+    }
   ]
 })

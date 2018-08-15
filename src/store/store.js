@@ -6,7 +6,7 @@ const VueSelf = Vue;
 export default new Vuex.Store({
   state: {
     token: null, 
-    footerStatus: true,
+    footerStatus: false,
     user: null,
     user_profile: null
   },

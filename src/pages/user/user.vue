@@ -10,6 +10,7 @@ export default {
   components: {
   },
   created() {
+    this.$store.state.footerStatus = true;
   },
   methods: {
   }

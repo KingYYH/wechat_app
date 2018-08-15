@@ -8,38 +8,57 @@
 </template>
 
 <script>
-import Footer from '@/components/footer.vue'
+import Footer from "@/components/footer.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Footer
   },
-  data(){
+  data() {
     return {
-      footerStatus: true
-    }
+      // footerStatus: false
+    };
   },
   created() {
-    this.getPath()
+    this.getPath();
+    // this.compatible();
   },
-  methods: {
-    getPath () {
-      let path = this.$route.path.replace("/", "");
-      const RouteName = ['index', 'invest', 'mail', 'user']
-      if (RouteName.indexOf(path) >= 0) {
-        this.$store.commit('toggleFooter', true)
+  watch: {
+    $route(to, from) {
+      const RouteName = ["index", "invest","company","mine", "mail", "user"];
+      if (RouteName.indexOf(to.name) >= 0) {
+        this.$store.commit("toggleFooter", true);
       } else {
-        this.$store.commit('toggleFooter', false)
+        this.$store.commit("toggleFooter", false);
       }
 
-    },
+      // let token = localStorage.getItem("token");
+      // if (token) return;
+      // const specificRouter = [
+       
+      // ];
+      // if (specificRouter.indexOf(to.name) < 0) {
+      //   this.$router.push("/login");
+      // }
+    }
+  },
+  methods: {
+    getPath() {
+      let path = this.$route.path.replace("/", "");
+      const RouteName = ["index", "invest", "mail", "user"];
+      if (RouteName.indexOf(path) >= 0) {
+        this.$store.commit("toggleFooter", true);
+      } else {
+        this.$store.commit("toggleFooter", false);
+      }
+    }
   }
-}
+};
 </script>
 
 <style lang="less">
-@import './assets/font/iconfont.css';
-@import './assets/css/vuxreset.less';
+@import "./assets/font/iconfont.css";
+@import "./assets/css/vuxreset.less";
 html,
 body {
   margin: 0;
@@ -132,8 +151,8 @@ a {
   height: 100%;
   line-height: 1.2;
   font-size: 12px;
-  color: #7F8389;
-  background-color: #FAFAFA;
+  color: #7f8389;
+  background-color: #fafafa;
   -webkit-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
@@ -146,4 +165,7 @@ a {
 body {
   position: static !important;
 }
+.swiper-pagination-bullet{background-color: #D2D2D2;width: 14px !important;height: 14px !important; border-radius: 50%;opacity: 1;margin-right: 12px;}
+
+ .swiper-pagination-bullet-active{background: #838383;}
 </style>

@@ -11,7 +11,7 @@
  </span>
  <span style="display:block;">2、可能存在担保人不能及时代偿本息；
 请各投资人自行评估风险，谨慎投资。</span></p>
-  <x-button class="submit invest-btn">我要投资</x-button>
+  <x-button class="submit invest-btn" @click="invBtn()">我要投资</x-button>
     </div>
     
   </div>
@@ -21,6 +21,11 @@ import { XButton } from "vux";
 export default {
   data() {
     return {};
+  },
+  methods: {
+    invBtn() {
+      this.router.push('/invPro')
+    }
   },
   components: {
     XButton

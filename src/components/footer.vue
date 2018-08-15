@@ -4,7 +4,7 @@
       <span class="iconfont icon-shouye"></span>
       <span class="nav-tt">首页</span>
     </router-link>
-    <router-link class="nav-li" :to="{ name: 'company' }" >
+    <router-link class="nav-li" :to="{ name: 'invest' }" >
       <span class="iconfont icon-touzi_"></span>
       <span class="nav-tt">投资</span>
     </router-link >

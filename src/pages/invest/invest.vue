@@ -27,7 +27,8 @@ export default {
     Sticky,
     Tab
   },
-  created() {},
+  created() {
+  },
   methods: {}
 };
 </script>
@@ -48,14 +49,14 @@ export default {
     position: fixed;
     z-index: 999;
     line-height: 78px;
-    // border: 1px solid #d5d5d5;
+    border: 1px solid #d5d5d5;
     color: #333333;
     font-size: 26px;
     font-family: "PingFangSC-Regular";
-    font-size: 0.373333rem;
      text-align: center;
       a {
         width: 50%;
+        height: 78px;
       }
     .router-link-active {
       color: #5967ff;
@@ -69,5 +70,7 @@ export default {
 }
 a {
   text-decoration: none;
+        height: 78px;
+display: inline-block;
 }
 </style>
