@@ -11,6 +11,7 @@
       <!-- <div class="mon-title">2017年度各月份融资额（单位 : 万元）</div> -->
       <div id="myChart1" class="myChart"></div>
       <div id="myChart2" class="myChart"></div>
+      <div id="myChart3" class="myChart"></div>
     </div>
     <div class="number-data">
       <span class="line"></span><span class="line-num">用户分析</span>
@@ -18,9 +19,9 @@
 注册人数在2017年度后期涨幅较大。同时，2017年累计注册用户较2016年同比增长率达46.32%。</p>
     </div>
      <div class="month">
-      <div id="myChart3" class="myChart"></div>
       <div id="myChart4" class="myChart"></div>
       <div id="myChart5" class="myChart"></div>
+      <div id="myChart6" class="myChart"></div>
     </div>
   </div>
 </template>
@@ -39,6 +40,7 @@ export default {
     this.drawLine3();
     this.drawLine4();
     this.drawLine5();
+    this.drawLine6();
   },
   methods: {
     drawLine1() {
@@ -212,9 +214,72 @@ export default {
         ]
       });
     },
-    drawLine3() {
+     drawLine3() {
       // 基于准备好的dom，初始化echarts实例
       let myChart = this.$echarts.init(document.getElementById("myChart3"));
+      // 绘制图表
+      myChart.setOption({
+        title: {
+          text: "2016-2017年度投资收益额（单位 : 万元）",
+          left: "center",
+          textStyle: {
+            //文字颜色
+            color: "#333333",
+            //字体大小
+            fontSize: 16
+          }
+        },
+        grid: {
+          left: 50
+        },
+        xAxis: {
+          type: "category",
+          data: ["2016", "2017"]
+        },
+        yAxis: {
+          type: "value",
+          data: ["150", "300", "450", "600", "750", "900"]
+        },
+        series: [
+          {
+            data: [
+              212.73,
+              755.72,
+            ],
+            type: "bar",
+            barWidth: 24,
+            itemStyle: {
+              //柱形图圆角，鼠标移上去效果，如果只是一个数字则说明四个参数全部设置为那么多
+              emphasis: {
+                barBorderRadius: 5
+              },
+
+              normal: {
+                //柱形图圆角，初始化效果
+                barBorderRadius: [10, 10, 0, 0],
+                label: {
+                  show: true, //是否展示
+                  position: "top",
+                  textStyle: {
+                    // fontWeight: "bolder",
+                    fontSize: "8",
+                    fontFamily: "PingFangSC-Regular",
+                    color: "#333333"
+                  }
+                },
+                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  { offset: 0, color: "#15D1F1" },
+                  { offset: 1, color: "#6F77FA" }
+                ])
+              }
+            }
+          }
+        ]
+      });
+    },
+    drawLine4() {
+      // 基于准备好的dom，初始化echarts实例
+      let myChart = this.$echarts.init(document.getElementById("myChart4"));
       // 绘制图表
       myChart.setOption({
         title: [
@@ -269,9 +334,9 @@ export default {
         ]
       });
     },
-    drawLine4() {
+    drawLine5() {
       // 基于准备好的dom，初始化echarts实例
-      let myChart = this.$echarts.init(document.getElementById("myChart4"));
+      let myChart = this.$echarts.init(document.getElementById("myChart5"));
       // 绘制图表
       myChart.setOption({
         color: ["#FE6786", "#4ADAED"],
@@ -359,9 +424,9 @@ export default {
         ]
       });
     },
-    drawLine5() {
+    drawLine6() {
       // 基于准备好的dom，初始化echarts实例
-      let myChart = this.$echarts.init(document.getElementById("myChart4"));
+      let myChart = this.$echarts.init(document.getElementById("myChart6"));
       var data = [
         {
           value: 25,
@@ -404,7 +469,7 @@ export default {
         },
         legend: {
           orient: "vertical",
-
+          top: 70,
           right: 0,
           top: "30%",
           data: [
@@ -419,6 +484,7 @@ export default {
             type: "pie",
             selectedMode: "single",
             radius: ["40%", "58%"],
+            center: ["30%", "40%"],
             color: [
               "#86D560",
               "#AF89D6",

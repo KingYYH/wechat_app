@@ -25,7 +25,7 @@ export default {
   },
   watch: {
     $route(to, from) {
-      const RouteName = ["index", "invest","company","mine", "mail", "user"];
+      const RouteName = ["index", "invest", "company", "mine", "mail", "user"];
       if (RouteName.indexOf(to.name) >= 0) {
         this.$store.commit("toggleFooter", true);
       } else {
@@ -35,7 +35,7 @@ export default {
       // let token = localStorage.getItem("token");
       // if (token) return;
       // const specificRouter = [
-       
+
       // ];
       // if (specificRouter.indexOf(to.name) < 0) {
       //   this.$router.push("/login");
@@ -63,10 +63,12 @@ html,
 body {
   margin: 0;
   padding: 0;
+  font-family: "PingFangSC-Regular";
 }
 
 a {
   color: #000;
+  text-decoration: none;
 }
 /* //解决闪烁 */
 [v-cloak] {
@@ -165,7 +167,19 @@ a {
 body {
   position: static !important;
 }
-.swiper-pagination-bullet{background-color: #D2D2D2;width: 14px !important;height: 14px !important; border-radius: 50%;opacity: 1;margin-right: 12px;}
+.swiper-pagination-bullet {
+  background-color: #d2d2d2;
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50%;
+  opacity: 1;
+  margin-right: 12px;
+}
 
- .swiper-pagination-bullet-active{background: #838383;}
+.swiper-pagination-bullet-active {
+  background: #838383;
+}
+.vux-tab {
+  background-color: #f5f5f5 !important;
+}
 </style>

@@ -21,6 +21,23 @@ import dynamicNews from '@/pages/index/dynamicNews' // 动态新闻
 import newPage from '@/pages/index/newPage' // 新闻详情
 import invPro from '@/pages/invest/invPro' //  投资
 import statistical from '@/pages/index/statistical' // 统计数据
+import allShop from '@/pages/mail/allShop' // 全部店铺
+import mailMore from '@/pages/mail/mailMore' // 更多商品
+import musical from '@/pages/mail/musical' // 乐器
+import classing from '@/pages/mail/classing' // 课时
+import doll from '@/pages/mail/doll' // 玩偶
+import leather from '@/pages/mail/leather' // 皮具
+import shoes from '@/pages/mail/shoes' // 鞋子
+import writing from '@/pages/mail/writing' // 文具
+import myShop from '@/pages/mail/myShop' // 我的店铺
+import goodIndex from '@/pages/mail/goodIndex' // 我的店铺 首页
+import goodAll from '@/pages/mail/goodAll' // 我的店铺全部
+import goodNew from '@/pages/mail/goodNew' // 我的店铺上新
+// import coll from '@/pages/mail/coll' // 我的店铺综合
+// import hotgood from '@/pages/mail/hotgood' // 我的店铺热销
+// import salespro from '@/pages/mail/salespro' // 我的店铺促销
+import myshopSearch from '@/pages/mail/myshopSearch' // 本店搜索
+
 Vue.use(Router)
 
 export default new Router({
@@ -56,7 +73,10 @@ export default new Router({
     {
       path: '/mail',
       name: 'mail',
-      component: mail
+      component: mail,
+      children: [
+        
+      ]
     },
     {
       path: '/user',
@@ -82,7 +102,7 @@ export default new Router({
       path: '/proDetails',
       name: 'proDetails',
       component: proDetails,
-          redirect: 'proDetails/subjectDetail',  
+      redirect: 'proDetails/subjectDetail',  
       children: [
         {  
           path: '/proDetails/subjectDetail',
@@ -136,6 +156,81 @@ export default new Router({
       path: '/statistical',
       name: 'statistical',
       component: statistical
-    }
+    },
+    {  
+      path: '/allShop',
+      name: 'allShop',       
+      component: allShop
+    },
+    {  
+      path: '/mailMore',
+      name: 'mailMore',       
+      component: mailMore,
+      redirect: '/mailMore/musical',
+      children: [
+        {  
+          path: '/mailMore/musical',
+          name: 'musical',       
+          component: musical
+        },
+
+        {
+          path: '/mailMore/writing',
+          name: 'writing',
+          component: writing
+        },
+        {
+          path: '/mailMore/classing',
+          name: 'classing',
+          component: classing
+        },
+        {
+          path: '/mailMore/doll',
+          name: 'doll',
+          component: doll
+        },
+        {
+          path: '/mailMore/shoes',
+          name: 'shoes',
+          component: shoes
+        },
+        {
+          path: '/mailMore/leather',
+          name: 'leather',
+          component: leather
+        }
+      ]
+    },
+    {
+      path: '/myShop',
+      name: 'myShop',
+      component: myShop,
+      redirect: '/myShop/goodIndex',
+      children: [
+        {  
+          path: '/myShop/goodIndex',
+          name: 'goodIndex',       
+          component: goodIndex
+        },
+
+        {
+          path: '/myShop/goodAll',
+          name: 'goodAll',
+          component: goodAll
+        },
+        {
+          path: '/myShop/goodNew',
+          name: 'goodNew',
+          component: goodNew
+        },
+       
+      ]
+    },
+    
+    {
+      path: '/myshopSearch',
+      name: 'myshopSearch',
+      component: myshopSearch
+    },
   ]
 })
