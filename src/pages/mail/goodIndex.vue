@@ -4,7 +4,7 @@
     <div class="good-index">
       <div class="section">
         <div class="good-type">热卖推荐</div>
-        <div class="good-items">
+        <div class="good-items" @click="shopList()">
           <div class="item-img">
             <img src="../../assets/images/banner.png" alt="">
             <div class="shouqing">已售罄</div>
@@ -40,6 +40,11 @@
 export default {
   data() {
     return {};
+  },
+  methods: {
+    shopList() {
+      this.$router.push('/shopList')
+    }
   }
 };
 </script>

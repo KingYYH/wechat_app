@@ -37,6 +37,9 @@ import goodNew from '@/pages/mail/goodNew' // 我的店铺上新
 // import hotgood from '@/pages/mail/hotgood' // 我的店铺热销
 // import salespro from '@/pages/mail/salespro' // 我的店铺促销
 import myshopSearch from '@/pages/mail/myshopSearch' // 本店搜索
+import shopList from '@/components/shopList' // 商品详情index
+import shoplistDetail from '@/components/shoplistDetail' // 商品详情
+import shoplistEva from '@/components/shoplistEva' // 商品评价
 
 Vue.use(Router)
 
@@ -231,6 +234,31 @@ export default new Router({
       path: '/myshopSearch',
       name: 'myshopSearch',
       component: myshopSearch
+    },
+    {
+      path: '/shopList',
+      name: 'shopList',
+      component: shopList,
+      redirect: '/shopList/shoplistDetail',
+      children: [
+        {  
+          path: '/shopList/shoplistDetail',
+          name: 'shoplistDetail',       
+          component: shoplistDetail
+        },
+
+        {
+          path: '/shopList/goodAll',
+          name: 'goodAll',
+          component: goodAll
+        },
+        {
+          path: '/shopList/shoplistEva',
+          name: 'shoplistEva',
+          component: shoplistEva
+        },
+       
+      ]
     },
   ]
 })

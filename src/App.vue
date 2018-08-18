@@ -70,6 +70,9 @@ a {
   color: #000;
   text-decoration: none;
 }
+li {
+  list-style: none;
+}
 /* //解决闪烁 */
 [v-cloak] {
   display: none !important;
@@ -181,5 +184,8 @@ body {
 }
 .vux-tab {
   background-color: #f5f5f5 !important;
+}
+.weui-cell__ft {
+  margin-right: 50px !important;
 }
 </style>

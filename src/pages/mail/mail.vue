@@ -1,17 +1,18 @@
 <template>
   <div class="mail">
     <div class="search">
-          <span class="iconfont icon-yanzhengma pos"></span>
+          <span class="iconfont icon-sousuo pos"></span>
           <x-input title="" v-model="search" class="inp test" placeholder="搜索商品、店铺"></x-input>
     </div>
-    <div class="recommend">
-       <swiper :options="swiperOption" ref="mySwiper">
-        <swiper-slide class="sli"><img src="../../assets/images/banner.png" alt=""></swiper-slide>
-        <swiper-slide class="sli"><img src="../../assets/images/banner.png" alt=""></swiper-slide>
-        <swiper-slide class="sli"><img src="../../assets/images/banner.png" alt=""></swiper-slide>
-      </swiper>
+   <div class="mail-content" v-if="!search">
+      <div class="recommend">
+        <swiper :options="swiperOption" ref="mySwiper">
+          <swiper-slide class="sli"><img src="../../assets/images/banner.png" alt=""></swiper-slide>
+          <swiper-slide class="sli"><img src="../../assets/images/banner.png" alt=""></swiper-slide>
+          <swiper-slide class="sli"><img src="../../assets/images/banner.png" alt=""></swiper-slide>
+        </swiper>
         <div class="swiper-pagination" slot="pagination"></div>
-    </div>
+      </div>
      <div class="goods">
       <router-link to="/comIntro" class="good-item">
         <img src="../../assets/images/company.png" alt="">
@@ -74,6 +75,7 @@
         </div>
       </div>
     </div>
+   </div>
   </div>
 </template>
 <script>
@@ -149,7 +151,7 @@ export default {
       display: inline-block;
       color: #5967ff;
       position: absolute;
-      top: 27px;
+      top: 23px;
       left: 47px;
       z-index: 2;
     }
